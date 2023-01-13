@@ -1,0 +1,15 @@
+import streamlit as st
+from scipy.optimize import minimize
+
+def minimize_fun():
+    st.title("Function Optimization")
+    fun = st.text_input("Enter the function to minimize:")
+    x0 = st.number_input("Enter the initial guess:")
+
+    result = minimize(fun, x0)
+
+    st.write("Minimizing...")
+    st.success("Minimum point is at x = {}".format(result.x))
+
+if __name__ == '__main__':
+    minimize_fun()
